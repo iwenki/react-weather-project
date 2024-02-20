@@ -1,13 +1,12 @@
 import './App.css';
+import Weather from './Weather.js';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <div className="container">
         <h1>Weather App</h1>
-        <button type="button" className="btn btn-primary">
-          Primary
-        </button>
+        <Weather/>
         <footer>
           This project was coded by {""}
           <a
@@ -17,7 +16,7 @@ function App() {
           >
             K. Vanessa Iwen
           </a>
-          {""} and is open-sourced on
+          {""} and is open-sourced on {""}
           <a
             href="https://github.com/iwenki/react-weather-project"
             target="_blank"
@@ -31,4 +30,3 @@ function App() {
   );
 }
 
-export default App;
