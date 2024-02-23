@@ -1,3 +1,35 @@
-.Weather{
-  border: 5px solid rgb(178, 195, 222);
+
+.Weather {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border: 5px solid rgb(99, 63, 96);
+  padding: 15px;
+  border-radius: 10px;
+  color:rgb(42, 41, 41);
+  background-color: rgba(115, 34, 96, 0.654);
+}
+.Weather form{
+  margin: 15px;
+}
+.Weather h1 {
+  font-size: 35px;
+  font-weight: 100;
+  line-height: 30px;
+}
+.Weather p {
+  font-size: 18px;
+  line-height: 20px;
+}
+.Weather ul {
+  padding:10px;
+  margin:0 auto;
+}
+.Weather li {
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 20px;
+  list-style: none;
+}
+.Weather .unit{
+  font-weight: 400;
+  line-height: 1;
 }
