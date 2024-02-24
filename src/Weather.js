@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 import "./weather.css";
+import Timestamp from "./Timestamp";
 import { PuffLoader } from "react-spinners";
 export default function Weather(props){
   const[weatherData,setweatherData]=useState({ready:false});
@@ -8,6 +9,7 @@ export default function Weather(props){
     setweatherData({
       ready:true,
       city: response.data.city,
+      date: new Date(response.data.time *1000),
       temperature: response.data.temperature.current,
       wind: response.data.wind.speed,
       humidity: response.data.temperature.humidity,
@@ -40,7 +42,7 @@ export default function Weather(props){
         </div>
       </form>
       <h1>{weatherData.city}</h1>
-      <p>Tuesday 06:30</p>
+      <Timestamp date={weatherData.date}/>
       <div className="row">
         <div className="col-6">
           <img
