@@ -1,6 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
+import axios from "axios";
 import "./weather.css";
-export default function Weather(){
+import { PuffLoader } from "react-spinners";
+export default function Weather(props){
+  const[weatherData,setweatherData]=useState({ready:false});
+  function handleResponse(response){
+    setweatherData({
+      ready:true,
+      city: response.data.city,
+      temperature: response.data.temperature.current,
+      wind: response.data.wind.speed,
+      humidity: response.data.temperature.humidity,
+      description: response.data.condition.description,
+      feels: response.data.temperature.feels_like,
+      icon: response.data.condition.icon_url,
+      iconDescription: response.data.condition.icon
+    });
+  }
+  if(weatherData.ready){
   return (
     <div className="Weather">
       <form>
@@ -14,31 +31,52 @@ export default function Weather(){
             />
           </div>
           <div className="col-3">
-            <input type="submit" value="Search" className="btn btn-primary w-100" />
+            <input
+              type="submit"
+              value="Search"
+              className="btn btn-primary w-100"
+            />
           </div>
         </div>
       </form>
-      <h1>Barcelona</h1>
+      <h1>{weatherData.city}</h1>
       <p>Tuesday 06:30</p>
       <div className="row">
         <div className="col-6">
           <img
-            src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-            alt="partly cloudy"
+            src={weatherData.icon}
+            alt={weatherData.iconDescription}
           />
           <ul>
-            <li>9°<span className="unit">C</span></li>
-            <li>Partly Cloudy</li>
+            <li>
+              {Math.round(weatherData.temperature)}°
+              <span className="unit">C</span>
+            </li>
+            <li className="text-capitalize">{weatherData.description}</li>
           </ul>
         </div>
         <div className="col-6">
           <ul>
-            <li>Precipitation: 15%</li>
-            <li>Humidity: 72%</li>
-            <li>Wind: 13 km/hr</li>
+            <li>Feels like: {Math.round(weatherData.feels)}°C</li>
+            <li>Humidity: {weatherData.humidity}%</li>
+            <li>Wind:{weatherData.wind} km/hr</li>
           </ul>
         </div>
       </div>
     </div>
   );
 }
+else{
+  const apiKey = "cbc90ba0a21t28a990f44b7f6f3ea68o";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(handleResponse);
+
+  return (
+    <PuffLoader
+      color={"blue"}
+      size={250}
+      aria-label="Loading Spinner"
+      data-testid="loader"
+    />
+  );
+}}
