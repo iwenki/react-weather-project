@@ -26,16 +26,12 @@ export default function Weather(props){
     axios.get(apiUrl).then(handleResponse);
 
   }
-
-
   function deliverSubmit(event){
     event.preventDefault();
     search();
   }
-
   function handleCityUpdate(event){
     setCity(event.target.value);
-
   }
   if(weatherData.ready){
   return (

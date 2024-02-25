@@ -1,6 +1,7 @@
 import React from "react";
 import Timestamp from "./Timestamp";
 import Iconchanges from "./Iconchanges";
+import Units from "./Units";
 
 export default function Weathercontainer(props){
   return(
@@ -12,8 +13,7 @@ export default function Weathercontainer(props){
           <Iconchanges code={props.data.icon}/>
           <ul>
             <li>
-              {Math.round(props.data.temperature)}°
-              <span className="unit">C</span>
+              <Units conversion={props.data.temperature}/>
             </li>
             <li className="text-capitalize">{props.data.description}</li>
           </ul>
