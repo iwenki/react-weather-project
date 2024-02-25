@@ -1,4 +1,5 @@
 import React from "react";
+import './timeStamp.css';
 
 export default function Timestamp(props){
   let days=[

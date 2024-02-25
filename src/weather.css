@@ -20,9 +20,9 @@
   margin:0 auto;
 }
 .Weather li {
-  font-size: 18px;
-  font-weight: 100;
-  line-height: 20px;
+  font-size: 25px;
+  font-weight:400;
+  line-height: 35px;
   list-style: none;
 }
 .Weather .unit{

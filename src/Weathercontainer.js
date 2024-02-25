@@ -1,5 +1,6 @@
 import React from "react";
 import Timestamp from "./Timestamp";
+import Iconchanges from "./Iconchanges";
 
 export default function Weathercontainer(props){
   return(
@@ -8,10 +9,7 @@ export default function Weathercontainer(props){
       <Timestamp date={props.data.date}/>
       <div className="row">
         <div className="col-6">
-          <img
-            src={props.data.icon}
-            alt={props.data.iconDescription}
-          />
+          <Iconchanges code={props.data.icon}/>
           <ul>
             <li>
               {Math.round(props.data.temperature)}°
