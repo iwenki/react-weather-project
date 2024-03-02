@@ -9,7 +9,7 @@ export default function WeatherContainer(props) {
       <h1>{props.data.city}</h1>
       <TimeStamp date={props.data.date} />
       <div className="row">
-        <div className="col-6">
+        <div className="col-6 text-center">
           <IconChanges code={props.data.icon} size={150} />
           <ul>
             <li>
@@ -18,7 +18,7 @@ export default function WeatherContainer(props) {
             <li className="text-capitalize">{props.data.description}</li>
           </ul>
         </div>
-        <div className="col-6">
+        <div className="col-6 text-center">
           <ul>
             <li>Feels like: {Math.round(props.data.feels)}°C</li>
             <li>Humidity: {props.data.humidity}%</li>

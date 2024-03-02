@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./dailyForecast.css";
 import axios from "axios";
 import { PuffLoader } from "react-spinners";
@@ -7,6 +7,11 @@ import IndividualDailyForecast from "./IndividualDailyForecast";
 export default function DailyForecast(props) {
   const [loaded, setLoaded] = useState(false);
   const [forecast, setForecast] = useState(null);
+
+  useEffect(()=>{
+    setLoaded(false);
+  },[props.coords]);
+  
   function handleResponse(response) {
     setForecast(response.data.daily);
     setLoaded(true);
@@ -16,9 +21,15 @@ export default function DailyForecast(props) {
     return (
       <div className="container text-center weekForecast">
         <div className="row">
-          <div className="col">
-            <IndividualDailyForecast data={forecast[0]}/>
-          </div>
+          {forecast.map(function(sixDayForecast, index){
+            if(index>0 && index<7){
+              return(
+               <div className="col-4 box" key={index}>
+            <IndividualDailyForecast data={sixDayForecast}/>
+          </div> 
+              )
+            }
+          })}
         </div>
       </div>
     );
