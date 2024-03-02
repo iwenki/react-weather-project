@@ -25,6 +25,10 @@
   line-height: 35px;
   list-style: none;
 }
+.Weather .infoButton{
+  background-color: #012169;
+  box-shadow: 4px 5px 14px 0px rgba(213, 206, 206, 0.53);
+} 
 .unit{
   font-weight: 500;
   line-height: 1;

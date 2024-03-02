@@ -1,0 +1,13 @@
+.weekForecast{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+}
+.weekForecast .dayFooter, .weekForecast .dayHeader{
+  background-color: rgba(209, 223, 226);
+  color: #012169;
+  font-size: 18px;
+}
+.weekForecast .main{
+  background-color:rgb(224, 231, 233);
+  font-size: 16px;
+}

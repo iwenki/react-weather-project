@@ -2,7 +2,8 @@ import React, {useState} from "react";
 import axios from "axios";
 import "./weather.css";
 import { PuffLoader } from "react-spinners";
-import Weathercontainer from "./Weathercontainer";
+import WeatherContainer from './WeatherContainer.js';
+import DailyForecast from "./DailyForecast";
 
 export default function Weather(props){
   const[city, setCity]=useState(props.defaultCity);
@@ -11,6 +12,7 @@ export default function Weather(props){
     setWeatherData({
       ready:true,
       city: response.data.city,
+      coordinates: response.data.coordinates, 
       date: new Date(response.data.time *1000),
       temperature: response.data.temperature.current,
       wind: response.data.wind.speed,
@@ -51,12 +53,13 @@ export default function Weather(props){
             <input
               type="submit"
               value="Search"
-              className="btn btn-primary w-100"
+              className="btn btn-primary w-100 infoButton"
             />
           </div>
         </div>
       </form>
-      <Weathercontainer data={weatherData}/>
+      <WeatherContainer data={weatherData}/>
+      <DailyForecast coords={weatherData.coordinates}/>
     </div>
   );
 }
@@ -68,6 +71,9 @@ else{
       size={250}
       aria-label="Loading Spinner"
       data-testid="loader"
+      display="block"
+      margin="0 auto"
     />
+  
   );
 }}

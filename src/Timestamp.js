@@ -1,7 +1,7 @@
 import React from "react";
 import './timeStamp.css';
 
-export default function Timestamp(props){
+export default function TimeStamp(props){
   let days=[
     "Sunday",
     "Monday",
