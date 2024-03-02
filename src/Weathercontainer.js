@@ -3,13 +3,14 @@ import Units from "./Units";
 import IconChanges from "./IconChanges";
 import TimeStamp from "./TimeStamp";
 
+
 export default function WeatherContainer(props) {
   return (
     <div className="information">
       <h1>{props.data.city}</h1>
       <TimeStamp date={props.data.date} />
       <div className="row">
-        <div className="col-6 text-center">
+        <div className="col-md-6 text-center">
           <IconChanges code={props.data.icon} size={150} />
           <ul>
             <li>
@@ -18,7 +19,7 @@ export default function WeatherContainer(props) {
             <li className="text-capitalize">{props.data.description}</li>
           </ul>
         </div>
-        <div className="col-6 text-center">
+        <div className="col-md-6 text-center">
           <ul>
             <li>Feels like: {Math.round(props.data.feels)}°C</li>
             <li>Humidity: {props.data.humidity}%</li>

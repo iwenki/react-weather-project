@@ -33,3 +33,22 @@
   font-weight: 500;
   line-height: 1;
 }
+@media(max-width:575px){
+  .infoButton{
+    margin-top: 15px;
+  }
+}
+
+
+@media(max-width:520px){
+  .Weather li{
+    font-size: 18px;
+  }
+  .Weather h1{
+    font-size:25px;
+    text-align: center;
+    font-weight: 300;
+  }
+  
+}
+

@@ -24,10 +24,12 @@ export default function DailyForecast(props) {
           {forecast.map(function(sixDayForecast, index){
             if(index>0 && index<7){
               return(
-               <div className="col-4 box" key={index}>
+               <div className="col-md-4 box" key={index}>
             <IndividualDailyForecast data={sixDayForecast}/>
           </div> 
-              )
+              );
+            } else{
+              return null;
             }
           })}
         </div>

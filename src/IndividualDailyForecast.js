@@ -13,7 +13,7 @@ export default function IndividualDailyForecast(props){
     <li className="list-group-item dayHeader">{day()}</li>
     <li className="list-group-item main">
       <IconChanges code={props.data.condition.icon} size={35} />
-      <div className="dailyDescription">
+      <div className="text-capitalize dailyDescription">
         {" "}
         {props.data.condition.description}
       </div>

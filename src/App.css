@@ -2,7 +2,7 @@ body{
  background-color: rgb(236, 229, 236); 
 }
 .App{
-  max-width: 670px;
+  max-width: 700px;
   margin:50px auto;
 }
 .App footer{

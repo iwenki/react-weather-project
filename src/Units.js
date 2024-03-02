@@ -19,7 +19,7 @@ export default function Units(props){
       <div className="WeatherUnit">
         <span className="unit">{Math.round(props.conversion)}{""}
           °C{""}|{""}
-          <a href="/" onClick={showFahrenheit}>
+          <a href="/" onClick={showFahrenheit} rel="noreferrer">
             °F
           </a>
         </span>
@@ -30,7 +30,10 @@ export default function Units(props){
     <div className="WeatherUnit">
       <span className="unit">
         {Math.round(Fahrenheit())}
-        <a href="/" onClick={showCelsius}>°C</a>{""}|{""}°F
+        <a href="/" onClick={showCelsius} rel="noreferrer">
+          °C
+        </a>
+        {""}|{""}°F
       </span>
     </div>
   );

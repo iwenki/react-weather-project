@@ -21,8 +21,8 @@ export default function TimeStamp(props){
     minutes=`0${minutes}`;
   }
   return(
-    <p>
+    <div className="date">
       {day} {hours}:{minutes} 
-    </p>
+    </div>
   );
 }
