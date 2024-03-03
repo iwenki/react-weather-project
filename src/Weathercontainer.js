@@ -4,7 +4,7 @@ import IconChanges from "./IconChanges";
 import TimeStamp from "./TimeStamp";
 
 
-export default function WeatherContainer(props) {
+export default function Weathercontainer(props) {
   return (
     <div className="information">
       <h1>{props.data.city}</h1>

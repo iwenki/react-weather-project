@@ -4,7 +4,7 @@ import axios from "axios";
 import { PuffLoader } from "react-spinners";
 import IndividualDailyForecast from "./IndividualDailyForecast";
 
-export default function DailyForecast(props) {
+export default function Dailyforecast(props) {
   const [loaded, setLoaded] = useState(false);
   const [forecast, setForecast] = useState(null);
 
