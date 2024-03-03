@@ -2,8 +2,8 @@ import React, {useState} from "react";
 import axios from "axios";
 import "./weather.css";
 import { PuffLoader } from "react-spinners";
-import WeatherContainer from './WeatherContainer.js';
-import DailyForecast from "./DailyForecast";
+import Weathercontainer from './Weathercontainer.js';
+import Dailyforecast from "./Dailyforecast.js";
 
 export default function Weather(props){
   const[city, setCity]=useState(props.defaultCity);
@@ -58,8 +58,8 @@ export default function Weather(props){
           </div>
         </div>
       </form>
-      <WeatherContainer data={weatherData}/>
-      <DailyForecast coords={weatherData.coordinates}/>
+      <Weathercontainer data={weatherData}/>
+      <Dailyforecast coords={weatherData.coordinates}/>
     </div>
   );
 }
